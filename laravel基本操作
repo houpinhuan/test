@@ -1,0 +1,14 @@
+laravel打印sql语句
+echo Stylist::where($where)->toSql();
+echo Stylist::toSql();
+
+laravel 打印简单数组格式，不含复杂的格式
+echo "<pre>";
+print_r($data->toarray());
+echo "<pre>";
+
+laravel  多个求和sum
+$data = Stylist::
+        select(DB::raw('count(status) as c'),'status',DB::raw('sum(userId) as s'))
+        ->groupBy('status')
+        ->get();
